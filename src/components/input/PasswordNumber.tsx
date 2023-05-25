@@ -6,9 +6,7 @@ function PasswordNumber() {
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { value } = e.target;
-    const formattedValue = value
-      .replace(/[^0-9]/g, "") // Remove non-numeric characters
-      .slice(0, 16); // Limit input to 12 characters
+    const formattedValue = value.slice(0, 16); // Limit input to 12 characters
     setPassword(formattedValue);
   };
   return (

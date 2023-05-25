@@ -1,3 +1,4 @@
+import { useState } from "react";
 import CloseButton from "../button/CloseButton";
 import PayNowButton from "../button/PayNowButton";
 import CardNumber from "../input/CardNumber";
@@ -8,6 +9,14 @@ import Container from "../right-bar/Container";
 import Formheader from "./Formheader";
 
 function PaymentForm() {
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+
+  const payHandler = () => {
+    setIsLoading(true);
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 1500);
+  };
   return (
     <div className="md:px-[100px] xl:px-[200px] h-screen overflow-y-auto py-12 w-full flex items-start lg:items-center justify-center">
       <div className="bg-white w-[350px] md:w-full lg:h-[95vh] relative">
@@ -19,7 +28,7 @@ function PaymentForm() {
             <CvvNumber />
             <ExpiryNumber />
             <PasswordNumber />
-            <PayNowButton />
+            <PayNowButton isLoading={isLoading} onClick={payHandler}/>
           </div>
           <div className="col-span-1 lg:col-span-3">
             <Container />

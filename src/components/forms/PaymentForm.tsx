@@ -15,7 +15,7 @@ function PaymentForm() {
     setIsLoading(true);
     setTimeout(() => {
       setIsLoading(false);
-    }, 1500);
+    }, 2500);
   };
   return (
     <div className="md:px-[100px] xl:px-[200px] h-screen overflow-y-auto py-12 w-full flex items-start lg:items-center justify-center">
